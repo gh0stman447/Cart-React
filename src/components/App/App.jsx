@@ -16,7 +16,7 @@ function App() {
       </header>
       <div className='section-cart__body'>
         <div className='container'>
-          <Cart />
+            <Cart/>
         </div>
       </div>
     </section>

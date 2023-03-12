@@ -1,22 +1,21 @@
 import React from 'react';
+import ButtonDelete from '../ButtonDelete';
 import Count from '../Count';
-import "./style.scss"
+import './style.scss';
 
-const Product = () => {
+const Product = (props) => {
   return (
     <section className='product'>
       <div className='product__img'>
-        <img src='img/products/mac-pro.jpg' alt='' />
+        <img src={`img/products/${props.img}`} alt='' />
       </div>
-      <div className='product__title'>Apple MacBook Air 13</div>
+      <div className='product__title'>{props.title}</div>
       <div className='product__count'>
-        <Count/>
+        <Count />
       </div>
-      <div className='product__price'>190 000 руб.</div>
+      <div className='product__price'>{props.price}</div>
       <div className='product__controls'>
-        <button type='button'>
-          <img src='img/icons/delete.svg' alt='detele' />
-        </button>
+        <ButtonDelete id={props.id} onClickDeleteBtn={props.onClickDeleteBtn} />
       </div>
     </section>
   );
