@@ -1,0 +1,10 @@
+@import '../App/vars.scss';
+
+.title-1 {
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 700;
+    @media (max-width: $mobile) {
+        font-size: 33px;
+    }
+}

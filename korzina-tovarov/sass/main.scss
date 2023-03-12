@@ -1,0 +1,15 @@
+//Base
+//можно опустить нижнее подчёркивание и расширение
+@import "./base/vars";
+@import "./base/reset";
+@import "./base/base";
+
+//Blocks
+@import "./blocks/section-cart";
+@import "./blocks/titles";
+@import "./blocks/cart-header";
+@import "./blocks/cart-footer";
+@import "./blocks/product";
+@import "./blocks/count";
+
+
