@@ -11,9 +11,15 @@ const Product = (props) => {
       </div>
       <div className='product__title'>{props.title}</div>
       <div className='product__count'>
-        <Count />
+        <Count
+          id={props.id}
+          increase={props.increase}
+          decrease={props.decrease}
+          count={props.count}
+        />
+        {/* onChangeCount={onChangeCount} */}
       </div>
-      <div className='product__price'>{props.price}</div>
+      <div className='product__price'>{props.priceTotal}</div>
       <div className='product__controls'>
         <ButtonDelete id={props.id} onClickDeleteBtn={props.onClickDeleteBtn} />
       </div>
