@@ -1,4 +1,5 @@
 import React from 'react';
+import formatPrice from '../../utils/priceFormatter';
 import ButtonDelete from '../ButtonDelete';
 import Count from '../Count';
 import './style.scss';
@@ -20,7 +21,7 @@ const Product = (props) => {
         />
         {/* onChangeCount={onChangeCount} */}
       </div>
-      <div className='product__price'>{props.priceTotal}</div>
+      <div className='product__price'>{formatPrice(props.priceTotal)} руб.</div>
       <div className='product__controls'>
         <ButtonDelete id={props.id} onClickDeleteBtn={props.onClickDeleteBtn} />
       </div>
