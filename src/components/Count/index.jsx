@@ -1,11 +1,18 @@
 import React from 'react';
 import './style.scss';
 
-const Count = ({ count, increase, id, decrease }) => {
+const Count = ({ count, increase, id, decrease, changeValue }) => {
   return (
     <div className='count'>
       <div className='count__box'>
-        <input type='number' className='count__input' min='1' max='100' value={`${count}`} />
+        <input
+          onChange={(e) => changeValue(+e.target.value, id)}
+          type='number'
+          className='count__input'
+          min='1'
+          max='100'
+          value={`${count}`}
+        />
       </div>
       <div className='count__controls'>
         <button type='button' className='count__up'>

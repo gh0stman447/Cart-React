@@ -12,6 +12,7 @@ const Product = (props) => {
       <div className='product__title'>{props.title}</div>
       <div className='product__count'>
         <Count
+          changeValue={props.changeValue}
           id={props.id}
           increase={props.increase}
           decrease={props.decrease}
