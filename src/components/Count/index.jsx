@@ -1,7 +1,13 @@
 import React from 'react';
 import './style.scss';
-
-const Count = ({ count, increase, id, decrease, changeValue }) => {
+import { increase, decrease, changeCount } from '../../redux/slices/cartSlice';
+import { useDispatch } from 'react-redux';
+const Count = ({ count, id }) => {
+  
+  const dispatch = useDispatch();
+  function changeValue(value, id) {
+    dispatch(changeCount({ value, id }));
+  }
   return (
     <div className='count'>
       <div className='count__box'>
@@ -16,10 +22,18 @@ const Count = ({ count, increase, id, decrease, changeValue }) => {
       </div>
       <div className='count__controls'>
         <button type='button' className='count__up'>
-          <img onClick={() => increase(id)} src='/img/icons/arrow-up.svg' alt='Увеличить' />
+          <img
+            onClick={() => dispatch(increase(id))}
+            src='/img/icons/arrow-up.svg'
+            alt='Увеличить'
+          />
         </button>
         <button type='button' className='count__down'>
-          <img onClick={() => decrease(id)} src='/img/icons/arrow-down.svg' alt='Уменьшить' />
+          <img
+            onClick={() => dispatch(decrease(id))}
+            src='/img/icons/arrow-down.svg'
+            alt='Уменьшить'
+          />
         </button>
       </div>
     </div>

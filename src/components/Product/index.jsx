@@ -5,6 +5,7 @@ import Count from '../Count';
 import './style.scss';
 
 const Product = (props) => {
+  console.log('render');
   return (
     <section className='product'>
       <div className='product__img'>
@@ -12,18 +13,11 @@ const Product = (props) => {
       </div>
       <div className='product__title'>{props.title}</div>
       <div className='product__count'>
-        <Count
-          changeValue={props.changeValue}
-          id={props.id}
-          increase={props.increase}
-          decrease={props.decrease}
-          count={props.count}
-        />
-        {/* onChangeCount={onChangeCount} */}
+        <Count id={props.id} count={props.count} />
       </div>
       <div className='product__price'>{formatPrice(props.priceTotal)} руб.</div>
       <div className='product__controls'>
-        <ButtonDelete id={props.id} onClickDeleteBtn={props.onClickDeleteBtn} />
+        <ButtonDelete id={props.id} />
       </div>
     </section>
   );
